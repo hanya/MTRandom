@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE dlg:window PUBLIC "-//OpenOffice.org//DTD OfficeDocument 1.0//EN" "dialog.dtd">
+<dlg:window xmlns:dlg="http://openoffice.org/2000/dialog" xmlns:script="http://openoffice.org/2000/script" dlg:id="MTRandomAddIn" dlg:left="127" dlg:top="136" dlg:width="262" dlg:height="186" dlg:closeable="true" dlg:moveable="true" dlg:withtitlebar="false">
+ <dlg:bulletinboard>
+  <dlg:fixedline dlg:id="FixedLine1" dlg:tab-index="0" dlg:left="4" dlg:top="5" dlg:width="252" dlg:height="15" dlg:value="Mersenne Twister Random Number Generator Add-In"/>
+  <dlg:menulist dlg:id="ArraySeedList" dlg:tab-index="7" dlg:left="166" dlg:top="31" dlg:width="66" dlg:height="147"/>
+  <dlg:radiogroup>
+   <dlg:radio dlg:id="AutomaticallyOption" dlg:tab-index="1" dlg:left="9" dlg:top="44" dlg:width="149" dlg:height="12" dlg:value="~Automatically"/>
+   <dlg:radio dlg:id="SimpleOption" dlg:tab-index="2" dlg:left="9" dlg:top="62" dlg:width="149" dlg:height="12" dlg:value="~Single unsigned integer"/>
+   <dlg:radio dlg:id="ArrayOption" dlg:tab-index="3" dlg:left="9" dlg:top="101" dlg:width="149" dlg:height="12" dlg:value="Array of ~unsigned integer"/>
+  </dlg:radiogroup>
+  <dlg:numericfield dlg:id="SimpleNumeric" dlg:tab-index="4" dlg:left="79" dlg:top="77" dlg:width="79" dlg:height="15" dlg:help-text="between 0 and 2^32-1" dlg:strict-format="true" dlg:decimal-accuracy="0" dlg:value-min="0" dlg:value-max="4294967295" dlg:spin="true" dlg:repeat="50"/>
+  <dlg:numericfield dlg:id="ArrayNumeric" dlg:tab-index="6" dlg:left="79" dlg:top="120" dlg:width="79" dlg:height="15" dlg:help-text="between 0 and 2^32-1" dlg:strict-format="true" dlg:decimal-accuracy="0" dlg:value-min="0" dlg:value-max="4294967295" dlg:spin="true" dlg:repeat="50"/>
+  <dlg:button dlg:id="AddButton" dlg:tab-index="8" dlg:left="138" dlg:top="140" dlg:width="20" dlg:height="17" dlg:help-text="Add to list" dlg:value="&gt;&gt;"/>
+  <dlg:button dlg:id="UpButton" dlg:tab-index="9" dlg:left="235" dlg:top="56" dlg:width="20" dlg:height="17" dlg:help-text="Move up" dlg:value="~Up"/>
+  <dlg:button dlg:id="DownButton" dlg:tab-index="10" dlg:left="235" dlg:top="79" dlg:width="20" dlg:height="17" dlg:help-text="Move down" dlg:value="~Dn"/>
+  <dlg:button dlg:id="RemoveButton" dlg:tab-index="11" dlg:left="235" dlg:top="117" dlg:width="20" dlg:height="17" dlg:help-text="Remove Selected" dlg:value="~X"/>
+  <dlg:text dlg:id="SimpleSeedLabel" dlg:tab-index="5" dlg:left="9" dlg:top="78" dlg:width="68" dlg:height="12" dlg:value="See~d: " dlg:align="right"/>
+  <dlg:text dlg:id="Label1" dlg:tab-index="12" dlg:left="7" dlg:top="29" dlg:width="147" dlg:height="11" dlg:value="Seeding way"/>
+  <dlg:text dlg:id="Label2" dlg:tab-index="13" dlg:left="8" dlg:top="164" dlg:width="147" dlg:height="13" dlg:value="Needs restart to enable changes."/>
+ </dlg:bulletinboard>
+</dlg:window>

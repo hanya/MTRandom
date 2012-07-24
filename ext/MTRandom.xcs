@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-schema  
+oor:name="MTRandom" 
+oor:package="mytools.sheet" xml:lang="en-US" 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<templates/>
+	<component>
+		<group oor:name="Seed">
+			<info>
+				<desc>MTRandom seed settings.</desc>
+			</info>
+			<prop oor:name="Mode" oor:type="xs:int">
+				<info>
+					<desc>Initialization mode. 0: seed is automatically created, 1: specified uint32 as an seed, 2: seed with array.</desc>
+				</info>
+			</prop>
+			<prop oor:name="Simple" oor:type="xs:long">
+				<info>
+					<desc>Seed with single uint32 value.</desc>
+				</info>
+			</prop>
+			<prop oor:name="Array" oor:type="xs:hexBinary">
+				<info>
+					<desc>Multiple uint32 values as a seed.</desc>
+				</info>
+			</prop>
+		</group>
+	</component>
+</oor:component-schema>

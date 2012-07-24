@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wiki2xhp version="2">
+	<meta>
+		<identifier>
+			mytools.math.MTRandom
+		</identifier>
+		<share_images>
+			True
+		</share_images>
+		<mode>
+			raw
+		</mode>
+		<file_extension>
+			.txt
+		</file_extension>
+		<wiki/>
+		<out>
+			./help
+		</out>
+		<data>
+			./data
+		</data>
+		<html>
+			./html
+		</html>
+	</meta>
+	<pages>
+		<node application="MTRNGAddIn">
+			<item lang="en" title="Mersenne Twister Random Number Generator Add-In"/>
+			<page file_name="index">
+				<item lang="en" name="index" page_title="Mersenne Twister Random Number Generator Add-In" title="index"/>
+			</page>
+		</node>
+	</pages>
+</wiki2xhp>

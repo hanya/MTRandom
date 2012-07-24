@@ -1,0 +1,1 @@
+Provides random number generator by Mersenne Twister algorithm based on Richard J. Wagner's C++ implementation. 

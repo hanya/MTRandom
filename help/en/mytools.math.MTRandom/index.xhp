@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<helpdocument version="1.0">
+  <meta>
+    <topic id="mytools_math_MTRandom_" indexer="include">
+      <title xml-lang="en" id="tit"></title>
+      <filename>/mytools.math.MTRandom/index.xhp</filename>
+    </topic>
+    <history>
+      <created date="2010-11-21T05:32:38"></created>
+      <lastedited date="2010-11-21T05:32:38"></lastedited>
+    </history>
+  </meta><body><paragraph id="hd_id42714417" level="1" role="heading" xml-lang="en">Mersenne Twister Random Number Generator Add-In</paragraph>
+<bookmark branch="index" id="id_id33769797" xml-lang="en"><bookmark_value>Mersenne Twister Random Number Generator Add-In</bookmark_value>
+</bookmark>
+<paragraph id="par_id40436891" role="paragraph" xml-lang="en"> Mersenne Twister Random Number Generator Add-In extension provides  spreadsheet functions generates pseud-random number with  Mersenne Twister algorithm.  And an UNO component which generates random number accessible from  macro. </paragraph>
+<paragraph id="par_id59620574" role="paragraph" xml-lang="en">The generator is based on C++ implementation written by Richard J. Wagner. <br />
+<link href="http://www-personal.umich.edu/~wagnerr/MersenneTwister.html">http://www-personal.umich.edu/~wagnerr/MersenneTwister.html↗</link>
+</paragraph>
+<paragraph id="par_id83625142" role="paragraph" xml-lang="en">This extension is working just a wrapper for it. If you need to know  the implementation of the generator and the extension, read the source code  of them, they are provided openly. </paragraph>
+<section id="sec_id57016662"><paragraph id="hd_id04320309" level="2" role="heading" xml-lang="en">Spreadsheet Functions </paragraph>
+<paragraph id="par_id91576766" role="paragraph" xml-lang="en"> These functions are provided on spreadsheets as add-in functions.  They can be found in the Mathematical category. </paragraph>
+<paragraph id="par_id82108102" role="paragraph" xml-lang="en">You can choose seed for the functions, see the following section. </paragraph>
+<section id="sec_id23997514"><paragraph id="hd_id38433882" level="3" role="heading" xml-lang="en">MTRAND </paragraph>
+<paragraph id="par_id47961116" role="paragraph" xml-lang="en" />
+<paragraph id="par_id35549085" role="code" xml-lang="en">=MTRAND()<br />
+</paragraph>
+<paragraph id="par_id12967447" role="paragraph" xml-lang="en">Generates pseud-random number between 0 to 1 in [0,1).  This result is one of 32-bit random numbers. </paragraph>
+</section>
+<section id="sec_id37229125"><paragraph id="hd_id63443615" level="3" role="heading" xml-lang="en">MTRANDBETWEEN </paragraph>
+<paragraph id="par_id53174721" role="paragraph" xml-lang="en" />
+<paragraph id="par_id71127059" role="code" xml-lang="en">=MTRANDBETWEEN(Bottom;Top)<br />
+</paragraph>
+<paragraph id="par_id42799334" role="paragraph" xml-lang="en">Generates pseud-random integer number between Bottom to Top in [Bottom,Top]. </paragraph>
+</section>
+</section>
+<section id="sec_id22323710"><paragraph id="hd_id90729209" level="2" role="heading" xml-lang="en">Choose A Seed </paragraph>
+<paragraph id="par_id79756719" role="paragraph" xml-lang="en"> Open Tools - Options - OpenOffice.org Calc - MT Random page to  set initialization mode. Following modes can be choosed. </paragraph>
+<paragraph id="par_id42042300" role="paragraph" xml-lang="en">You can set these options throught Tools - Extension Manager dialog. </paragraph>
+<section id="sec_id70406364"><paragraph id="hd_id96565965" level="3" role="heading" xml-lang="en">Automatically </paragraph>
+<paragraph id="par_id38220166" role="paragraph" xml-lang="en"> This is default mode. If this mode is selected, a seed for  initialization is automatically selected from /dev/urandom or time() and clock(). </paragraph>
+</section>
+<section id="sec_id48028326"><paragraph id="hd_id90005940" level="3" role="heading" xml-lang="en">Single unsigned integer </paragraph>
+<paragraph id="par_id39841572" role="paragraph" xml-lang="en"> A seed is specified by an unsigned integer which is inputted in the  numeric field, which range is between 0 to 2^32 -1. </paragraph>
+</section>
+<section id="sec_id83892108"><paragraph id="hd_id84109438" level="3" role="heading" xml-lang="en">Array of unsigned integer </paragraph>
+<paragraph id="par_id35087847" role="paragraph" xml-lang="en"> If you want to use larger value as a seed, choose this mode.  The following description is taken from original code. </paragraph>
+<paragraph id="par_id06618701" role="paragraph" xml-lang="en">Seed the generator with an array of uint32's  There are 2^19937-1 possible initial states.  This function allows  all of those to be accessed by providing at least 19937 bits (with a  default seed length of N = 624 uint32's).  Any bits above the lower 32  in each element are discarded. </paragraph>
+</section>
+</section>
+<section id="sec_id80070236"><paragraph id="hd_id50356194" level="2" role="heading" xml-lang="en">About Speed </paragraph>
+<paragraph id="par_id19947364" role="paragraph" xml-lang="en"> Internal implementation of the original generator is much fast.  But there is a problem between to call add-in functions, which  makes dramatically speed downed. They are called through  com.sun.star.beans.XIntrospection interface which needs many  function calls makes speed down.  Apparently implementation of add-in functions are not suite  for spreadsheet functions. </paragraph>
+<paragraph id="par_id56369053" role="paragraph" xml-lang="en">Please vote to the following issue to swich random number generator to  Mersenne Twister based one. <link href="http://www.openoffice.org/issues/show_bug.cgi?id=14730">http://www.openoffice.org/issues/show_bug.cgi?id=14730↗</link>
+</paragraph>
+</section>
+</body>
+
+</helpdocument>

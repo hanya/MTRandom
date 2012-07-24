@@ -1,0 +1,39 @@
+
+#ifndef __MYTOOLS_SHEET_MTRANDOMADDIN_IDL__
+#define __MYTOOLS_SHEET_MTRANDOMADDIN_IDL__
+
+#ifndef __com_sun_star_uno_XInterface_idl__
+#include <com/sun/star/uno/XInterface.idl>
+#endif
+
+#ifndef __com_sun_star_lang_IllegalArgumentException_idl__
+#include <com/sun/star/lang/IllegalArgumentException.idl>
+#endif
+
+module mytools { module sheet {
+/** Provides Mersenne Twister Random Number Generator as one of 
+    Spreadsheet function.
+    
+*/
+interface XMTRandomAddIn : ::com::sun::star::uno::XInterface
+{
+    /** Returns next random number in [0,1).
+        @return
+                    random number in [0,1).
+    */
+    double getMTRand();
+    
+    /** Returns random number between specified values in [min,max] 
+        (both inclusive).
+        @param min bottom integer number.
+        @param max top integer number.
+        @return
+                    integer random number in [min,max].
+    */
+    double getMTRandBetween( [in] double min, [in] double max )
+        raises( com::sun::star::lang::IllegalArgumentException );
+};
+
+}; };
+
+#endif

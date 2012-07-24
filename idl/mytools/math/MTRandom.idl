@@ -1,0 +1,34 @@
+
+
+#ifndef __mytools_math_MTRANDOM_IDL__
+#define __mytools_math_MTRANDOM_IDL__
+
+#include <mytools/math/XMTRandom.idl>
+
+module mytools { module math {
+
+interface XMTRandom;
+
+/** Mersenne Twister Random Number Generator
+ */
+service MTRandom : XMTRandom
+{
+    /** Create with a seed generated from the system clock 
+        (or the operating system's
+        random number pool if available).
+     */
+    create();
+    
+    /** Initialize with simple integer.
+     */
+    createWithInteger( [in] hyper oneSeed );
+    
+    /** Initialize with array of integer.
+     */
+    createWithArray( [in] sequence<hyper> bigSeed );
+};
+
+}; };
+
+#endif
+

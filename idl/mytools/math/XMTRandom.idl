@@ -1,0 +1,145 @@
+
+#ifndef __MYTOOLS_MATH_MTRANDOM_IDL__
+#define __MYTOOLS_MATH_MTRANDOM_IDL__
+
+#ifndef __com_sun_star_uno_XInterface_idl__
+#include <com/sun/star/uno/XInterface.idl>
+#endif
+
+module mytools { module math {
+
+/** Generates random number with Mersenne Twister algorithm.
+
+    Some methods of this interface takes value as hyper type, 
+    because of the unsigned long is deprecated to use. 
+    Pass a value which is ranged in 0-2^32-1.
+    
+    This interface directed to the implementation of the generator 
+    which is written by Richard J. Wagner, see: 
+    http://www-personal.umich.edu/~wagnerr/MersenneTwister.html .
+*/
+interface XMTRandom : ::com::sun::star::uno::XInterface
+{
+    /** Duplicates the generator which having the same internal 
+        state with the original one. 
+        
+        @return 
+                Duplicated generator.
+    */
+    mytools::math::XMTRandom copy();
+    
+    /** Gets next 32-bit integer number in [0,2^32-1].
+        
+        @return random number
+    */
+    hyper randInt();
+    
+    /** Gets next 32-bit integer number in [0,n] for n < 2^32.
+        @param n
+                upper limit inclusive
+        @return
+                random number
+    */
+    hyper randIntTo( [in] hyper n );
+    
+    /** Gets next 32-bit double precision floating point number in [0,1].
+        
+        @return
+                random number
+    */
+    double rand();
+    
+    /** [0,n].
+        
+        @param n
+                upper limit inclusive
+        @return
+                random number
+    */
+    double randTo( [in] hyper n);
+    
+    /** [0,1).
+        
+        @return
+                random number
+    */
+    double randExc();
+    
+    /** [0,n).
+        
+        @param n
+                upper limit exclusive
+        @return
+                random number
+    */
+    double randExcTo( [in] double n );
+    
+    /** (0,1)
+        
+        @return
+                random number
+    */
+    double randDblExc();
+    
+    /** (0,n)
+        
+        @return
+                random number
+    */
+    double randDblExcTo( [in] double n );
+    
+    /** IEEE double precision type 53-bit random numbers in [0,1).
+        
+        @return
+                random number
+    */
+    double rand53();
+    
+    /** Access to nonuniform random number distributions
+        
+        @param mean
+                mean value
+        @param stddev
+                standard deviation
+        @return
+                random number
+    */
+    double randNorm( [in] double mean, [in] double stddev );
+    
+    /** Re-seeding.
+    */
+    void seed();
+    
+    /** Re-seeding with integer seed.
+        
+        @return
+                integer seed
+    */
+    void seedInt( [in] hyper n );
+    
+    /** Re-seeding with array.
+        
+        @return
+                large seed
+    */
+    void seedArray( [in] sequence< hyper > bigSeed );
+    
+    /** returns current state.
+        
+        @return
+                current state array
+    */
+    sequence< hyper > getState();
+    
+    /** sets current state.
+        
+        @param aState
+                state array
+    */
+    void setState( [in] sequence< hyper > aState );
+    
+};
+
+}; };
+
+#endif

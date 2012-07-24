@@ -1,0 +1,69 @@
+
+Mersenne Twister Random Number Generator Add-In extension provides 
+spreadsheet functions generates pseud-random number with 
+Mersenne Twister algorithm. 
+And an UNO component which generates random number accessible from 
+macro.
+
+The generator is based on C++ implementation written by Richard J. Wagner. <br />
+http://www-personal.umich.edu/~wagnerr/MersenneTwister.html
+
+This extension is working just a wrapper for it. If you need to know 
+the implementation of the generator and the extension, read the source code 
+of them, they are provided openly.
+
+
+== Spreadsheet Functions ==
+These functions are provided on spreadsheets as add-in functions. 
+They can be found in the Mathematical category.
+
+You can choose seed for the functions, see the following section.
+
+=== MTRAND ===
+ =MTRAND()
+Generates pseud-random number between 0 to 1 in [0,1). 
+This result is one of 32-bit random numbers.
+
+=== MTRANDBETWEEN ===
+ =MTRANDBETWEEN(Bottom;Top)
+Generates pseud-random integer number between Bottom to Top in [Bottom,Top].
+
+
+== Choose A Seed ==
+Open Tools - Options - OpenOffice.org Calc - MT Random page to 
+set initialization mode. Following modes can be choosed.
+
+You can set these options throught Tools - Extension Manager dialog.
+
+=== Automatically ===
+This is default mode. If this mode is selected, a seed for 
+initialization is automatically selected from /dev/urandom or time() and clock().
+
+=== Single unsigned integer ===
+A seed is specified by an unsigned integer which is inputted in the 
+numeric field, which range is between 0 to 2^32 -1.
+
+=== Array of unsigned integer ===
+If you want to use larger value as a seed, choose this mode. 
+The following description is taken from original code.
+
+Seed the generator with an array of uint32's 
+There are 2^19937-1 possible initial states.  This function allows 
+all of those to be accessed by providing at least 19937 bits (with a 
+default seed length of N = 624 uint32's).  Any bits above the lower 32 
+in each element are discarded.
+
+== About Speed ==
+Internal implementation of the original generator is much fast. 
+But there is a problem between to call add-in functions, which 
+makes dramatically speed downed. They are called through 
+com.sun.star.beans.XIntrospection interface which needs many 
+function calls makes speed down. 
+Apparently implementation of add-in functions are not suite 
+for spreadsheet functions.
+
+Please vote to the following issue to swich random number generator to 
+Mersenne Twister based one.
+http://www.openoffice.org/issues/show_bug.cgi?id=14730
+
+

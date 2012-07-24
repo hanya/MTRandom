@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<oor:component-data 
+xmlns:oor="http://openoffice.org/2001/registry" 
+xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+oor:name="MTRandom" 
+oor:package="mytools.sheet">
+	<node oor:name="Seed">
+		<prop oor:name="Mode" oor:type="xs:int">
+			<value>0</value>
+		</prop>
+        <prop oor:name="Simple" oor:type="xs:long">
+			<value>1431655765</value>
+		</prop>
+        <prop oor:name="Array" oor:type="xs:hexBinary">
+			<value></value>
+		</prop>
+	</node>
+</oor:component-data>

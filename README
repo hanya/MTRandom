@@ -1,0 +1,31 @@
+
+  MTRandom is an extension provides Mersenne Twister Random Number Generator 
+  for OpenOffice kind. This extension provides add-in function 
+  on the spreadsheet and a generator as an UNO component.
+
+Notice:
+  This extension is based on C++ implementation of the 
+  Mersenne Twister Random Number Generator written by Richard J. Wagner.
+  http://www-personal.umich.edu/~wagnerr/MersenneTwister.html
+
+Please see LICENSE file about this extension.
+
+Compile
+  You need the following environment:
+  - OpenOffice.org 3.X
+  - OpenOffice.org SDK 3.X
+  - C++ compiler (GNU C++ on Linux and VC++2008 on Windows)
+
+  1. Setup environmental variables of the OpenOffice.org SDK.
+  2. make
+  3. MTRandom-VERSION-ENVIRON.oxt package is created.
+  4. Install the created extension package from Extension Manager 
+     of OpenOffice.
+
+
+Spreadsheet Functions
+
+  MTRand() returns random number between 0 to 1 in [0,1).
+  MTRandBetween(Bottom;Top) returns integer number between the numbers 
+  you specify.
+
