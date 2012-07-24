@@ -30,11 +30,13 @@ interface XMTRandom : ::com::sun::star::uno::XInterface
     
     /** Gets next 32-bit integer number in [0,2^32-1].
         
-        @return random number
+        @return 
+                random number
     */
     hyper randInt();
     
-    /** Gets next 32-bit integer number in [0,n] for n < 2^32.
+    /** Gets next 32-bit integer number in [0,n] for n &lt; 2^32.
+        
         @param n
                 upper limit inclusive
         @return

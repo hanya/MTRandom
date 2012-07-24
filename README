@@ -29,3 +29,8 @@ Spreadsheet Functions
   MTRandBetween(Bottom;Top) returns integer number between the numbers 
   you specify.
 
+API Reference
+  
+  IDL reference generated from IDL files are provided.
+  https://github.com/downloads/hanya/MTRandom/MTRandom-apidoc-0.2.3.zip
+
