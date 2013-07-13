@@ -13,6 +13,7 @@ SETTINGS=$(PRJ)/settings
 include $(SETTINGS)/settings.mk
 include $(SETTINGS)/std.mk
 include $(SETTINGS)/dk.mk
+include $(SETTINGS)/platform.mk
 
 COMP_NAME=mtrandom
 COMP_IMPL_NAME=$(COMP_NAME).uno.$(SHAREDLIB_EXT)
@@ -89,22 +90,8 @@ OPTIONPAGE=$(BUILD_DIR)/OptionsDialog.xcu
 COMP_DIR=$(BUILD_DIR)/libs
 COMP_REGISTRATION=$(COMP_DIR)/registration.components
 
-ifneq "$(PLATFORM)" "windows"
-TAEGET_PLATFORM=$(PLATFORM)_x86
-else
-ifneq "$(PLATFORM)" "linux"
-ifneq "$(PROCTYPE)" "i386"
-TAEGET_PLATFORM=$(PLATFORM)_x86
-else
-ifneq "$(PROCTYPE)" "x86_64"
-TAEGET_PLATFORM=$(PLATFORM)_x86_64
-endif
-endif
-endif
-endif
 
-
-UNO_PKG_NAME=$(EXTENSION_NAME)-$(EXTENSION_VERSION)$(EXTENSION_STATE)-$(subst _,-,$(TAEGET_PLATFORM)).$(UNOOXT_EXT)
+UNO_PKG_NAME=$(EXTENSION_NAME)-$(EXTENSION_VERSION)$(EXTENSION_STATE)-$(subst _,-,$(EXTENSION_PLATFORM)).$(UNOOXT_EXT)
 
 
 .PHONY: ALL
@@ -222,7 +209,7 @@ endif
 	@echo $(OSEP)license-text xlink:href="$(QM)LICENSE$(QM)" license-id="$(QM)this$(QM)" /$(CSEP) >> $@
 	@echo $(OSEP)/simple-license$(CSEP) >> $@
 	@echo $(OSEP)/registration$(CSEP) >> $@
-	@echo $(OSEP)platform value="$(QM)$(TAEGET_PLATFORM)$(QM)" /$(CSEP) >> $@
+	@echo $(OSEP)platform value="$(QM)$(EXTENSION_PLATFORM)$(QM)" /$(CSEP) >> $@
 	@echo $(OSEP)display-name$(CSEP) >> $@
 	@echo $(OSEP)name lang="$(QM)en$(QM)"$(CSEP)$(EXTENSION_DISPLAY_NAME)$(OSEP)/name$(CSEP) >> $@
 	@echo $(OSEP)/display-name$(CSEP) >> $@
