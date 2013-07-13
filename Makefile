@@ -1,5 +1,5 @@
 
-EXTENSION_VERSION=0.2.3
+EXTENSION_VERSION=0.2.4
 EXTENSION_STATE=
 EXTENSION_ID=mytools.math.MTRandom
 EXTENSION_NAME=MTRandom
@@ -213,7 +213,7 @@ $(DESCRIPTION) :
 ifeq "$(SDKVERSION)" "3.3"
 else
 	@echo $(OSEP)dependencies$(CSEP) >> $@
-	@echo $(OSEP)OpenOffice.org-minimal-version value="$(QM)3.4$(QM)" d:name="$(QM)OpenOffice.org 3.4$(QM)" /$(CSEP) >> $@
+	@echo $(OSEP)OpenOffice.org-minimal-version value="$(QM)4.0$(QM)" d:name="$(QM)OpenOffice.org 4.0$(QM)" /$(CSEP) >> $@
 	@echo $(OSEP)/dependencies$(CSEP) >> $@
 endif
 	@echo $(OSEP)version value="$(QM)$(EXTENSION_VERSION)$(QM)" /$(CSEP) >> $@
