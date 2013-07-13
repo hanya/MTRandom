@@ -64,7 +64,7 @@ MTRandomAddIn::MTRandomAddIn( Reference< ::com::sun::star::uno::XComponentContex
 				{
 					Sequence< sal_uInt32 > pSeed;
 					checkArraySeed(bigSeed, pSeed);
-					mMTRand.seed((sal_uInt32*) pSeed.getConstArray(), pSeed.getLength());
+					mMTRand.seed((MTRand::uint32*) pSeed.getConstArray(), pSeed.getLength());
 					bInitialized = sal_True;
 				}
 				catch (RuntimeException &)

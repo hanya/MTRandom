@@ -61,7 +61,7 @@ void SAL_CALL MTRandomImpl::initialize( const Sequence< ::com::sun::star::uno::A
 			{
 				Sequence< sal_uInt32 > pSeed;
 				checkArraySeed(a, pSeed);
-				mMTRand = MTRand((sal_uInt32*) pSeed.getConstArray(), (sal_uInt32) pSeed.getLength());
+				mMTRand = MTRand((MTRand::uint32*) pSeed.getConstArray(), (MTRand::uint32) pSeed.getLength());
 			} else {
 				/*
 				Sequence< double > d;
@@ -154,7 +154,7 @@ void SAL_CALL MTRandomImpl::seedArray( const ::Sequence< ::sal_Int64 >& bigSeed 
 {
 	Sequence< sal_uInt32 > pSeed;
 	checkArraySeed(bigSeed, pSeed);
-	mMTRand.seed((sal_uInt32*) pSeed.getConstArray(), pSeed.getLength());
+	mMTRand.seed((MTRand::uint32*) pSeed.getConstArray(), pSeed.getLength());
 }
 
 
